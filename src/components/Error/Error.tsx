@@ -1,5 +1,5 @@
-import { StyledContent } from '../Layout.styles';
+import { StyledErrorContent } from './Error.styles';
 
 export function Error() {
-  return <StyledContent>Ups, something went wrong</StyledContent>;
+  return <StyledErrorContent>Ups, something went wrong</StyledErrorContent>;
 }
