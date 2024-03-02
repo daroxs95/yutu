@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 import { Error } from '../../../../components/Error/Error';
 import { StyledInput } from '../../../../components/Input.styles';
-import { StyledContent } from '../../../../components/Layout.styles';
 import { Loading } from '../../../../components/Loading/Loading';
 import useDebounced from '../../../../hooks/useDebounced';
 import { useInput } from '../../../../hooks/useInput';
@@ -49,7 +48,7 @@ function List() {
   );
 
   return (
-    <StyledContent>
+    <>
       {isFetching && <Loading />}
       <StyledControlBar>
         <StyledInput
@@ -86,7 +85,7 @@ function List() {
           </StyledGrid>
         </AnimatePresence>
       )}
-    </StyledContent>
+    </>
   );
 }
 
