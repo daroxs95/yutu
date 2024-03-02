@@ -35,6 +35,7 @@ export function VideoPlayer() {
       {floating && (
         <StyledControls>
           <StyledButton
+            title="Go to dedicated video page"
             onClick={() => {
               navigate(`/${id}`);
             }}
@@ -42,6 +43,7 @@ export function VideoPlayer() {
             <Extern width={25} height={25} />
           </StyledButton>
           <StyledButton
+            title="Close video"
             onClick={() => {
               if (setId) setId('');
             }}
