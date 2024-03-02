@@ -1,11 +1,11 @@
 export const theme = {
   colors: {
     primary: {
-      base: '#000',
+      base: '#d87900',
       contrast: '#fff',
     },
     secondary: {
-      base: '#fff',
+      base: '#f9fafb',
       contrast: '#000',
     },
     darker: {
@@ -14,7 +14,7 @@ export const theme = {
     },
     lighter: {
       base: '#fff',
-      contrast: '#000',
+      contrast: '#272343',
     },
     success: {
       base: '#4caf50',
@@ -31,7 +31,7 @@ export const theme = {
     hGap: '10px',
   },
   shadows: {
-    base: 'rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;',
+    base: '0 1px 15px 7px rgba(0,0,0,.05)',
     hover:
       'rgba(60, 64, 67, 0.4) 0px 1px 2px 0px, rgba(60, 64, 67, 0.2) 0px 1px 3px 1px;',
   },
@@ -43,7 +43,8 @@ export const theme = {
     sx: '14px',
   },
   borderRadius: {
-    base: '0px',
+    base: '1em',
+    small: '0.5em',
   },
   easings: {
     wiggle: 'cubic-bezier(0.74, -0.6, 0.225, 1.59)',

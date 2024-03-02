@@ -1,8 +1,11 @@
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
+import Details from '../modules/VideoPlayer/application/Details/Details';
+import List from '../modules/VideoPlayer/application/List/List';
 import { theme } from '../styles/theme';
-import { StyledContent, StyledGlobal } from './App.styles';
+import { StyledGlobal } from './App.styles';
 
 const queryClient = new QueryClient();
 
@@ -11,9 +14,12 @@ function App() {
     <ThemeProvider theme={theme}>
       <StyledGlobal />
       <QueryClientProvider client={queryClient}>
-        <StyledContent>
-          <h1>You earned this 🍺 </h1>
-        </StyledContent>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<List />} />
+            <Route path="/:id" element={<Details />} />
+          </Routes>
+        </BrowserRouter>
       </QueryClientProvider>
     </ThemeProvider>
   );
