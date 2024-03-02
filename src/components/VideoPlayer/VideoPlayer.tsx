@@ -14,7 +14,9 @@ export function VideoPlayer() {
   const navigate = useNavigate();
 
   const { title, id, floating, setId } = useVideoContext();
-  const showVideoControls = floating ? 0 : 1;
+  // THis does not work ok, using this resets the video playback position when navigating back to the list
+  // const showVideoControls = floating ? 0 : 1;
+  const showVideoControls = 1;
 
   if (!id) return null;
 
