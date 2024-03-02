@@ -26,7 +26,7 @@ export const theme = {
     },
   },
   layout: {
-    maxWidth: '1400px',
+    maxWidth: '1024px',
     vGap: '20px',
     hGap: '10px',
   },
