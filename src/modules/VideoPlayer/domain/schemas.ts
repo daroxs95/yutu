@@ -23,4 +23,23 @@ export const VideoSchema = z.object({
   views: z.string().or(z.number()),
 });
 
+export const VideoDetailsSchema = z.object({
+  videoId: z.string(),
+  url: z.string(),
+  title: z.string(),
+  description: z.string(),
+  owner: z.string(),
+  channelId: z.string().optional(),
+  thumbnailUrl: z.string(),
+  datePublished: z.string(),
+  genre: z.string(),
+  paid: z.boolean().optional(),
+  unlisted: z.boolean().optional(),
+  isFamilyFriendly: z.boolean(),
+  duration: z.number(),
+  views: z.number(),
+  regionsAllowed: z.array(z.string()),
+  likeCount: z.number(),
+});
+
 export const VideoListSchema = z.array(VideoSchema);
