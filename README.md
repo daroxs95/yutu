@@ -6,8 +6,10 @@ This contains most of the common setup and best practices to start creating uniq
 
 ## Quick start
 
-Clone the repo and run:
-
+- Clone the repo
+- Duplicate `.env.example` and rename it to `.env`
+- Add your youtube api url to the `.env` file
+- Run:
 ```bash
 yarn install
 ```
