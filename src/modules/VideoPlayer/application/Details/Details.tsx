@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useQuery } from 'react-query';
 import { useNavigate, useParams } from 'react-router-dom';
 
-import { StyledButton } from '../../../../components/Button.styles';
+import { StyledButton } from '../../../../components/Button/Button.styles';
 import { Error } from '../../../../components/Error/Error';
 import { Loading } from '../../../../components/Loading/Loading';
 import { useVideoContext } from '../../../../contexts/video';

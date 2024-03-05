@@ -10,10 +10,17 @@ This contains most of the common setup and best practices to start creating uniq
 - Duplicate `.env.example` and rename it to `.env`
 - Add your youtube api url to the `.env` file
 - Run:
+
 ```bash
-yarn install
+npm run install
 ```
 
 ```bash
-yarn dev
+npm run dev
+```
+
+For storybook run:
+
+```bash
+npm run storybook
 ```

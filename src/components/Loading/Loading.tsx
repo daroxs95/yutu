@@ -1,9 +1,17 @@
 import { StyledLoading, StyledSpinner } from './Loading.styles';
 
-export function Loading() {
+export interface LoadingProps {
+  color?: string;
+}
+
+export function Loading({ color }: LoadingProps) {
   return (
     <StyledLoading>
-      <StyledSpinner />
+      <StyledSpinner
+        style={{
+          backgroundColor: color,
+        }}
+      />
     </StyledLoading>
   );
 }

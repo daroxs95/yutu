@@ -3,7 +3,7 @@ import { useQuery } from 'react-query';
 import { Link } from 'react-router-dom';
 
 import { Error } from '../../../../components/Error/Error';
-import { StyledInput } from '../../../../components/Input.styles';
+import { StyledInput } from '../../../../components/Input/Input.styles';
 import { Loading } from '../../../../components/Loading/Loading';
 import useDebounced from '../../../../hooks/useDebounced';
 import { useInput } from '../../../../hooks/useInput';
