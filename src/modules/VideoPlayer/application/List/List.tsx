@@ -3,11 +3,11 @@ import { useQuery } from 'react-query';
 import { Link } from 'react-router-dom';
 
 import { Error } from '../../../../components/Error/Error';
+import { Search } from '../../../../components/Icons/Search';
 import { StyledInput } from '../../../../components/Input/Input.styles';
 import { Loading } from '../../../../components/Loading/Loading';
 import useDebounced from '../../../../hooks/useDebounced';
 import { useInput } from '../../../../hooks/useInput';
-import { Search } from '../../../../Icons/Search';
 import { getVideos } from '../../infrastructure/api';
 import {
   StyledChannelName,

@@ -19,7 +19,7 @@ export const StyledIframeContainer = styled(motion.div)<{ $floating: boolean }>`
   align-items: center;
   width: ${({ $floating }) => ($floating ? 'fit-content' : '100%')};
   position: ${({ $floating }) => ($floating ? 'fixed' : 'relative')};
-  top: ${({ $floating }) => ($floating ? '30px' : 'auto')};
+  bottom: ${({ $floating }) => ($floating ? '100px' : 'auto')};
   right: ${({ $floating }) => ($floating ? '30px' : 'auto')};
 
   ${StyledIframe} {

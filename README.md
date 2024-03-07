@@ -24,3 +24,6 @@ For storybook run:
 ```bash
 npm run storybook
 ```
+
+## Notes
+- Project is using custom simple rest api for managing playlists, built with cloudflare workers and workers kv store. You can find the source code [here](https://github.com/daroxs95/yutu-be), and the open api [here](https://yutu-be.daroxs95.workers.dev/).

@@ -4,10 +4,10 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 import { StyledButton } from '../../../../components/Button/Button.styles';
 import { Error } from '../../../../components/Error/Error';
+import { Eye } from '../../../../components/Icons/Eye';
+import { List } from '../../../../components/Icons/List';
 import { Loading } from '../../../../components/Loading/Loading';
 import { useVideoContext } from '../../../../contexts/video';
-import { Eye } from '../../../../Icons/Eye';
-import { List } from '../../../../Icons/List';
 import { getVideoById } from '../../infrastructure/api';
 import { StyledChannelName, StyledVideoTitle } from '../List/List.styles';
 import { StyledDetailsContent, StyledViews } from './Details.styles';

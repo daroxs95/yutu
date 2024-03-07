@@ -1,9 +1,9 @@
 import { useNavigate } from 'react-router-dom';
 
 import { useVideoContext } from '../../contexts/video';
-import { Close } from '../../Icons/Close';
-import { Extern } from '../../Icons/Extern';
 import { StyledButton } from '../Button/Button.styles';
+import { Close } from '../Icons/Close';
+import { Extern } from '../Icons/Extern';
 import {
   StyledControls,
   StyledIframe,

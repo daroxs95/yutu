@@ -1,6 +1,6 @@
 import type { Meta, StoryContext, StoryObj } from '@storybook/react';
 
-import { Close } from '../../Icons/Close';
+import { Close } from '../Icons/Close';
 import { StyledButton } from './Button.styles';
 
 const ButtonWrapper = ({ text, icon }: { text?: string; icon?: boolean }) => (
