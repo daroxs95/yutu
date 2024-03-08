@@ -6,7 +6,7 @@ import Dialog from '../../../../components/Dialog/Dialog';
 import { Add } from '../../../../components/Icons/Add';
 import { Close } from '../../../../components/Icons/Close';
 import { StyledInput } from '../../../../components/Input/Input.styles';
-import { Loading } from '../../../../components/Loading/Loading';
+import { StyledSpinner } from '../../../../components/Loading/Loading.styles';
 import { Playlist, Video } from '../../domain/types';
 import {
   addVideoToPlaylist,
@@ -65,7 +65,6 @@ function AddToPlaylist({ video }: { video: Video }) {
 
   return (
     <>
-      {updating && <Loading />}
       <Dialog open={open} onClose={() => setOpen(false)}>
         <StyledButton
           title="Close"
@@ -137,6 +136,13 @@ function AddToPlaylist({ video }: { video: Video }) {
             Create new playlist
           </StyledButton>
           <StyledButton title="Save"> Save </StyledButton>
+          {updating && (
+            <StyledSpinner
+              style={{
+                margin: 'auto',
+              }}
+            />
+          )}
         </StyledForm>
       </Dialog>
       <StyledButton
