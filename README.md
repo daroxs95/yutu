@@ -7,8 +7,8 @@ This contains most of the common setup and best practices to start creating uniq
 ## Quick start
 
 - Clone the repo
-- Duplicate `.env.example` and rename it to `.env`
-- Add your youtube api url to the `.env` file
+- Duplicate `.env.example` and rename it to `.env` (Not needed for the moment)
+- Add your youtube api url to the `.env` file (Not needed for the moment)
 - Run:
 
 ```bash
@@ -27,3 +27,6 @@ npm run storybook
 
 ## Notes
 - Project is using custom simple rest api for managing playlists, built with cloudflare workers and workers kv store. You can find the source code [here](https://github.com/daroxs95/yutu-be), and the open api [here](https://yutu-be.daroxs95.workers.dev/).
+- Url is always updated with current search query
+- Global video player, so you can keep watching videos while navigating through the app
+- Module based clean architecture project structure
