@@ -19,3 +19,19 @@ export const StyledBackdrop = styled.div`
   height: 100%;
   backdrop-filter: blur(5px);
 `;
+
+export const StyledModalTitle = styled.h2`
+  margin-bottom: 1rem;
+  color: ${({ theme }) => theme.colors.lighter.contrast};
+`;
+
+export const StyledModalDescription = styled.p`
+  margin-bottom: 1rem;
+  color: ${({ theme }) => theme.colors.lighter.contrast};
+`;
+
+export const StyledModalControls = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+`;

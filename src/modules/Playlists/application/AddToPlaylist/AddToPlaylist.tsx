@@ -3,6 +3,10 @@ import { useQuery, useQueryClient } from 'react-query';
 
 import { StyledButton } from '../../../../components/Button/Button.styles';
 import Dialog from '../../../../components/Dialog/Dialog';
+import {
+  StyledModalDescription,
+  StyledModalTitle,
+} from '../../../../components/Dialog/Dialog.styles';
 import { Add } from '../../../../components/Icons/Add';
 import { Close } from '../../../../components/Icons/Close';
 import { StyledInput } from '../../../../components/Input/Input.styles';
@@ -18,11 +22,7 @@ import {
   StyledListItem,
   StyledListText,
 } from '../List/List.styles';
-import {
-  StyledForm,
-  StyledModalDescription,
-  StyledModalTitle,
-} from './AddToPlaylist.styles';
+import { StyledForm } from './AddToPlaylist.styles';
 
 function AddToPlaylist({ video }: { video: Video }) {
   const [open, setOpen] = useState(false);

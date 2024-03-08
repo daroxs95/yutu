@@ -46,3 +46,4 @@ npm run storybook
 - Improve responsiveness
 - Add close on click outside for modals
 - Move video playback and controls to app instead of iframe
+- Remove the few coupling cases between modules
