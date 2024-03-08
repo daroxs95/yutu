@@ -9,12 +9,12 @@ export const StyledListWrapper = styled.div`
   align-items: center;
   width: fit-content;
   margin-top: ${(p) => p.theme.layout.vGap};
-  transform: translate(500px, calc(-100% + 40px));
+  transform: translate(min(500px, 30vw), calc(-100% + 40px));
   transition: transform 0.3s ${(p) => p.theme.easings.base};
   z-index: 1000;
 
   &:hover {
-    transform: translate(500px, 0);
+    transform: translate(min(500px, 30vw), 0);
   }
 `;
 
