@@ -26,7 +26,7 @@ For storybook run:
 npm run storybook
 ```
 
-## Notes
+## Notes / Features
 
 - Project is using custom simple rest api for managing playlists, built with cloudflare workers and workers kv store.
   You can find the source code [here](https://github.com/daroxs95/yutu-be), and the open
@@ -37,6 +37,8 @@ npm run storybook
 - Slug based routing for playlists
 - Video addition to multiple playlist at once
 - Only allow adding videos to playlist if they are not already in the playlist
+- Custom app theme abstraction
+- Playlists deletion
 
 ## Roadmap
 

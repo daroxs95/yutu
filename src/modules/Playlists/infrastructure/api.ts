@@ -54,3 +54,11 @@ export async function addVideoToPlaylist(slug: string, video: Video) {
   const data = await res.json();
   return data;
 }
+
+export async function deletePlaylist(slug: string) {
+  const res = await fetch(`${PLAYLISTS_API_ENDPOINT}/lists/${slug}`, {
+    method: 'DELETE',
+  });
+  const data = await res.json();
+  return data;
+}

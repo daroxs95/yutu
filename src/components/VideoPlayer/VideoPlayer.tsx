@@ -20,6 +20,7 @@ export function VideoPlayer() {
 
   if (!id && (!playlist || playlist.length == 0)) return null;
 
+  const isPlaylist = playlist && playlist.length > 0;
   return (
     <StyledIframeContainer
       $floating={floating}
@@ -35,9 +36,9 @@ export function VideoPlayer() {
       {floating && (
         <StyledControls>
           <StyledButton
-            title="Go to dedicated video page"
+            title={isPlaylist ? 'Go to playlist page' : 'Go to dedicated video page'}
             onClick={() => {
-              navigate(`/${id}`);
+              navigate(isPlaylist ? `/playlist/${id}` : `/${id}`);
             }}
           >
             <Extern width={25} height={25} />
@@ -56,7 +57,7 @@ export function VideoPlayer() {
       <StyledIframe
         title={title}
         src={
-          playlist
+          isPlaylist
             ? `https://www.youtube.com/embed/${id}?autoplay=1&playlist=${playlist.join(
                 ',',
               )}&controls=${showVideoControls}`
