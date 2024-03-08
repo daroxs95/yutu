@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledDialog = styled.dialog`
-  position: relative;
+  position: fixed;
   width: 400px;
   border-radius: 8px;
   border: none;

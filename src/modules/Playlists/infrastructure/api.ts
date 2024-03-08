@@ -62,3 +62,11 @@ export async function deletePlaylist(slug: string) {
   const data = await res.json();
   return data;
 }
+
+export async function deleteVideoFromPlaylist(slug: string, videoId: string) {
+  const res = await fetch(`${PLAYLISTS_API_ENDPOINT}/lists/${slug}/video/${videoId}`, {
+    method: 'DELETE',
+  });
+  const data = await res.json();
+  return data;
+}

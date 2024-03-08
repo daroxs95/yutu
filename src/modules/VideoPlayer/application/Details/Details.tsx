@@ -16,7 +16,7 @@ import { StyledControls, StyledDetailsContent, StyledViews } from './Details.sty
 function Details() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { setId, setTitle, setFloating } = useVideoContext();
+  const { setId, setTitle, setFloating, setPlaylist } = useVideoContext();
 
   const { data, error, isLoading } = useQuery(
     ['video-details', id],
@@ -32,6 +32,7 @@ function Details() {
       if (setId) setId(data.videoId);
       if (setTitle) setTitle(data.title);
       if (setFloating) setFloating(false);
+      if (setPlaylist) setPlaylist(undefined);
     }
 
     return () => {

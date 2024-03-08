@@ -13,7 +13,11 @@ import {
   StyledChannelName,
   StyledVideoTitle,
 } from '../../../VideoPlayer/application/List/List.styles';
-import { deletePlaylist, getPlaylistBySlug } from '../../infrastructure/api';
+import {
+  deletePlaylist,
+  deleteVideoFromPlaylist,
+  getPlaylistBySlug,
+} from '../../infrastructure/api';
 import {
   StyledControls,
   StyledDetailsContent,
@@ -23,6 +27,7 @@ import {
 
 function Details() {
   const [openDeleteConfirmation, setOpenDeleteConfirmation] = useState(false);
+  const [videoIdToDelete, setVideoIdToDelete] = useState<string | null>(null);
   const [deleting, setDeleting] = useState(false);
 
   const { id } = useParams();
@@ -92,6 +97,18 @@ function Details() {
             <StyledVideoCard key={video.id}>
               <StyledImage src={video.thumbnailUrl} />
               <StyledVideoTitle>{video.name}</StyledVideoTitle>
+              <StyledButton
+                title="Delete this video"
+                onClick={() => {
+                  setVideoIdToDelete(video.id);
+                }}
+                style={{
+                  width: 'fit-content',
+                  marginLeft: 'auto',
+                }}
+              >
+                <Trash width={25} height={25} />
+              </StyledButton>
             </StyledVideoCard>
           ))}
         </StyledDetailsContent>
@@ -117,6 +134,26 @@ function Details() {
         }}
         title={'Delete playlist'}
         message={'Are you sure you want to delete this playlist?'}
+      />
+      <ConfirmationModal
+        isOpen={!!videoIdToDelete}
+        onClose={() => setVideoIdToDelete(null)}
+        onConfirm={() => {
+          setDeleting(true);
+          deleteVideoFromPlaylist(id, videoIdToDelete as string)
+            .then((res) => {
+              if (res.success) {
+                queryClient.invalidateQueries('playlists-list');
+                queryClient.invalidateQueries('playlists-details');
+              }
+            })
+            .finally(() => {
+              setDeleting(false);
+              setVideoIdToDelete(null);
+            });
+        }}
+        title={'Delete this video'}
+        message={'Are you sure you want to delete this video?'}
       />
     </>
   );

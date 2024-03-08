@@ -39,6 +39,7 @@ npm run storybook
 - Only allow adding videos to playlist if they are not already in the playlist
 - Custom app theme abstraction
 - Playlists deletion
+- Real time playlist updates due deletions or video additions by self
 
 ## Roadmap
 
