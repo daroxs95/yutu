@@ -45,3 +45,4 @@ npm run storybook
 - Add toast notifications
 - Improve responsiveness
 - Add close on click outside for modals
+- Move video playback and controls to app instead of iframe

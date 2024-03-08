@@ -13,12 +13,12 @@ import {
 export function VideoPlayer() {
   const navigate = useNavigate();
 
-  const { title, id, floating, setId } = useVideoContext();
+  const { title, id, floating, setId, setPlaylist, playlist } = useVideoContext();
   // THis does not work ok, using this resets the video playback position when navigating back to the list
   // const showVideoControls = floating ? 0 : 1;
   const showVideoControls = 1;
 
-  if (!id) return null;
+  if (!id && (!playlist || playlist.length == 0)) return null;
 
   return (
     <StyledIframeContainer
@@ -46,6 +46,7 @@ export function VideoPlayer() {
             title="Close video"
             onClick={() => {
               if (setId) setId('');
+              if (setPlaylist) setPlaylist(undefined);
             }}
           >
             <Close width={25} height={25} />
@@ -54,7 +55,13 @@ export function VideoPlayer() {
       )}
       <StyledIframe
         title={title}
-        src={`https://www.youtube.com/embed/${id}?controls=${showVideoControls}`}
+        src={
+          playlist
+            ? `https://www.youtube.com/embed/${id}?autoplay=1&playlist=${playlist.join(
+                ',',
+              )}&controls=${showVideoControls}`
+            : `https://www.youtube.com/embed/${id}?controls=${showVideoControls}`
+        }
         allowFullScreen
       />
     </StyledIframeContainer>

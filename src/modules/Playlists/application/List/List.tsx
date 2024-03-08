@@ -21,6 +21,9 @@ function List() {
   return (
     <>
       <StyledListWrapper>
+        <StyledTray title="Playlists">
+          <Playlist width={24} height={24} />
+        </StyledTray>
         <StyledList>
           {data?.map((item, index) => (
             <Link key={index} to={`/playlist/${item.slug}`}>
@@ -31,9 +34,6 @@ function List() {
             </Link>
           ))}
         </StyledList>
-        <StyledTray title="Playlists">
-          <Playlist width={24} height={24} />
-        </StyledTray>
       </StyledListWrapper>
     </>
   );

@@ -2,16 +2,16 @@ import { styled } from 'styled-components';
 
 export const StyledListWrapper = styled.div`
   position: fixed;
-  top: 0;
+  bottom: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: fit-content;
   margin-top: ${(p) => p.theme.layout.vGap};
-  transform: translate(min(500px, 30vw), calc(-100% + 40px));
+  transform: translate(min(500px, 30vw), calc(100% - 60px));
   transition: transform 0.3s ${(p) => p.theme.easings.base};
-  z-index: 1000;
+  z-index: 10000;
 
   &:hover {
     transform: translate(min(500px, 30vw), 0);
@@ -81,8 +81,8 @@ export const StyledTray = styled.div`
   background-color: ${(p) => p.theme.colors.secondary.base};
   color: ${(p) => p.theme.colors.lighter.contrast};
   padding: ${(p) => p.theme.layout.vGap} ${(p) => p.theme.layout.hGap};
-  border-radius: 0 0 ${(p) => p.theme.borderRadius.base}
-    ${(p) => p.theme.borderRadius.base};
+  border-radius: ${(p) => p.theme.borderRadius.base} ${(p) => p.theme.borderRadius.base} 0
+    0;
   text-align: center;
   box-shadow: ${(p) => p.theme.shadows.extra};
 `;

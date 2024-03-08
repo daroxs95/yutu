@@ -35,7 +35,6 @@ function AddToPlaylist({ video }: { video: Video }) {
   const queryClient = useQueryClient();
   const { data } = useQuery(['playlists-list'], () => getPlaylists(), {
     retry: false,
-    keepPreviousData: true,
   });
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {

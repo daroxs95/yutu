@@ -7,6 +7,8 @@ interface VideoContextType {
   setId?: (id: string) => void;
   setTitle?: (title: string) => void;
   setFloating?: (floating: boolean) => void;
+  playlist?: string[];
+  setPlaylist?: (playlist: string[] | undefined) => void;
 }
 
 const initialState = {
@@ -19,6 +21,7 @@ export const VideoContext = createContext<VideoContextType>(initialState);
 
 export function VideoProvider({ children }: { children: ReactNode }) {
   const [id, setId] = useState(initialState.id);
+  const [playlist, setPlaylist] = useState<string[] | undefined>([]);
   const [title, setTitle] = useState(initialState.title);
   const [floating, setFloating] = useState(initialState.floating);
 
@@ -31,6 +34,8 @@ export function VideoProvider({ children }: { children: ReactNode }) {
         setId,
         setTitle,
         setFloating,
+        playlist,
+        setPlaylist,
       }}
     >
       {children}
