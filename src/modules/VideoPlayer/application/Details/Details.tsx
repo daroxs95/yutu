@@ -8,9 +8,10 @@ import { Eye } from '../../../../components/Icons/Eye';
 import { List } from '../../../../components/Icons/List';
 import { Loading } from '../../../../components/Loading/Loading';
 import { useVideoContext } from '../../../../contexts/video';
+import AddToPlaylist from '../../../Playlists/application/AddToPlaylist/AddToPlaylist';
 import { getVideoById } from '../../infrastructure/api';
 import { StyledChannelName, StyledVideoTitle } from '../List/List.styles';
-import { StyledDetailsContent, StyledViews } from './Details.styles';
+import { StyledControls, StyledDetailsContent, StyledViews } from './Details.styles';
 
 function Details() {
   const { id } = useParams();
@@ -50,17 +51,27 @@ function Details() {
     <>
       {data && (
         <StyledDetailsContent>
-          <StyledButton
-            title="Go back to the list of videos"
-            onClick={() => {
-              navigate(-1);
-            }}
-            style={{
-              width: 'fit-content',
-            }}
-          >
-            <List width={25} height={25} />
-          </StyledButton>
+          <StyledControls>
+            <StyledButton
+              title="Go back to the list of videos"
+              onClick={() => {
+                navigate(-1);
+              }}
+              style={{
+                width: 'fit-content',
+              }}
+            >
+              <List width={25} height={25} />
+            </StyledButton>
+            <AddToPlaylist
+              video={{
+                id: data.videoId,
+                name: data.title,
+                url: data.url,
+                thumbnailUrl: data.thumbnailUrl,
+              }}
+            />
+          </StyledControls>
           <StyledVideoTitle>{data.title}</StyledVideoTitle>
           <StyledChannelName>{data.description}</StyledChannelName>
           <StyledViews>

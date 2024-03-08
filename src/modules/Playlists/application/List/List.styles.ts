@@ -37,7 +37,6 @@ export const StyledListItem = styled.button`
   all: unset;
   padding: ${(p) => p.theme.layout.vGap} ${(p) => p.theme.layout.hGap};
   border-radius: ${(p) => p.theme.borderRadius.base};
-  box-shadow: ${(p) => p.theme.shadows.base};
   background-color: ${(props) => props.theme.colors.lighter.base};
   color: ${(props) => props.theme.colors.lighter.contrast};
   margin-bottom: ${(p) => p.theme.layout.vGap};
@@ -47,7 +46,8 @@ export const StyledListItem = styled.button`
   border: 2px solid ${({ theme }) => theme.colors.secondary.base};
   transition: border-color 1s ${({ theme }) => theme.easings.base};
 
-  &:hover:not(:disabled) {
+  &:hover:not(:disabled),
+  &.selected {
     cursor: pointer;
     background-color: ${(props) => props.theme.colors.primary.highlight};
     border-color: ${({ theme }) => theme.colors.primary.base};

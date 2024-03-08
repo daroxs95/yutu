@@ -15,3 +15,8 @@ export const StyledDetailsContent = styled.div`
   gap: 1rem;
   width: 100%;
 `;
+
+export const StyledControls = styled.div`
+  display: flex;
+  gap: 1rem;
+`;

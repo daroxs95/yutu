@@ -2,6 +2,7 @@ import { z } from 'zod';
 
 import { PLAYLISTS_API_ENDPOINT } from '../../../config';
 import { PlaylistSchema } from '../domain/schemas';
+import { Video } from '../domain/types';
 
 export async function getPlaylists() {
   const res = await fetch(`${PLAYLISTS_API_ENDPOINT}/lists`);
@@ -23,4 +24,33 @@ export async function getPlaylistBySlug(slug: string) {
     throw new Error('Unexpected response received from the API');
   }
   return parsed.data;
+}
+
+export async function createPlaylist(
+  name: string,
+  description: string,
+  slug: string,
+  videos: Video[],
+) {
+  const res = await fetch(`${PLAYLISTS_API_ENDPOINT}/lists`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ name, description, slug, videos }),
+  });
+  const data = await res.json();
+  return data;
+}
+
+export async function addVideoToPlaylist(slug: string, video: Video) {
+  const res = await fetch(`${PLAYLISTS_API_ENDPOINT}/lists/${slug}/video`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(video),
+  });
+  const data = await res.json();
+  return data;
 }
